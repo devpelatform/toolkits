@@ -10,6 +10,9 @@
     "./base": "./base.jsonc",
     "./react": "./react.jsonc"
   },
+  "scripts": {
+    "clean:all": "rimraf node_modules"
+  },
   "repository": "github:devpelatform/toolkits",
   "homepage": "https://github.com/devpelatform/toolkits",
   "bugs": {

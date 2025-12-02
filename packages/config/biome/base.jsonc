@@ -39,15 +39,45 @@
     },
     "rules": {
       "recommended": true,
+      "a11y": {
+        "noAutofocus": "off",
+        "noLabelWithoutControl": "off",
+        "noSvgWithoutTitle": "off",
+        "noStaticElementInteractions": "off",
+        "useAnchorContent": "off",
+        "useAriaPropsForRole": "off",
+        "useAriaPropsSupportedByRole": "off",
+        "useButtonType": "off",
+        "useFocusableInteractive": "off",
+        "useSemanticElements": "off",
+        "useValidAnchor": "off"
+      },
       "nursery": {
         "noFloatingPromises": "error",
-        "noUnnecessaryConditions": "error"
+        "noUnnecessaryConditions": "error",
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "info",
+          "options": {
+            "functions": ["cn"]
+          }
+        }
       },
       "complexity": {
-        "useSimplifiedLogicExpression": "error"
+        "useSimplifiedLogicExpression": "error",
+        "noImportantStyles": "off"
       },
       "suspicious": {
-        "noDoubleEquals": "error"
+        "noDuplicateProperties": "off",
+        "noUnknownAtRules": "off",
+        "noArrayIndexKey": "off",
+        "noExplicitAny": "warn",
+        "noImplicitAnyLet": "off",
+        "noDoubleEquals": {
+          "fix": "safe",
+          "level": "warn",
+          "options": {}
+        }
       },
       "style": {
         "useImportType": {
@@ -60,8 +90,6 @@
         "useAsConstAssertion": "error",
         "useDefaultParameterLast": "error",
         "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
         "noUnusedTemplateLiteral": "error",
         "useNumberNamespace": "error",
         "noInferrableTypes": "error",
@@ -74,8 +102,22 @@
             "syntax": "shorthand"
           }
         },
+        "useConsistentTypeDefinitions": "error",
+        "useConst": "error",
         "useShorthandAssign": "error",
-        "useConsistentTypeDefinitions": "error"
+        "useSingleVarDeclarator": "error",
+        "noNonNullAssertion": "off",
+        "noDescendingSpecificity": "off",
+        "useSelfClosingElements": {
+          "fix": "safe",
+          "level": "info",
+          "options": {}
+        },
+        "useTemplate": {
+          "fix": "safe",
+          "level": "info",
+          "options": {}
+        }
       },
       "correctness": {
         "noUnusedVariables": "warn",
@@ -85,7 +127,17 @@
           "options": {
             "forceJsExtensions": true
           }
-        }
+        },
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "info",
+          "options": {}
+        },
+        "noUnknownTypeSelector": "off",
+        "useUniqueElementIds": "off",
+        "noUnusedFunctionParameters": "off",
+        "useParseIntRadix": "off",
+        "useHookAtTopLevel": "off"
       }
     }
   },
@@ -97,11 +149,7 @@
           "options": {
             "identifierOrder": "natural",
             "groups": [
-              [
-                ":URL:",
-                ":NODE:",
-                ":BUN:"
-              ],
+              [":URL:", ":NODE:", ":BUN:"],
               ":BLANK_LINE:",
               "react",
               "react/**",
