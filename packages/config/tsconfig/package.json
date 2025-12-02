@@ -1,0 +1,30 @@
+{
+  "name": "@pelatform/tsconfig",
+  "version": "0.0.1",
+  "description": "Common TypeScript configuration.",
+  "author": "Pelatform",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "repository": "github:devpelatform/toolkits",
+  "homepage": "https://github.com/devpelatform/toolkits",
+  "bugs": {
+    "url": "https://github.com/devpelatform/toolkits/issues"
+  },
+  "keywords": [
+    "pelatform",
+    "typescript",
+    "tsconfig",
+    "configuration",
+    "config"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts}": "biome check --write --no-errors-on-unmatched",
+    "*.{md,yml,yaml}": "prettier --write",
+    "*.{json,jsonc,html}": "biome format --write --no-errors-on-unmatched"
+  }
+}
