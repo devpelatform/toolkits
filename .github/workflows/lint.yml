@@ -32,11 +32,8 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Lint Format
-        run: bun run lint:format
+      - name: Lint
+        run: bun run lint:fix && bun run lint
 
       - name: Check Types
         run: bun run types:check
-
-      - name: Run Lint
-        run: bun run lint

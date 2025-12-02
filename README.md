@@ -28,8 +28,14 @@ bun run build
 # Type-check
 bun run types:check
 
-# Lint and format
-bun run lint:format
+# Lint (check)
+bun run lint
+
+# Lint (auto-fix)
+bun run lint:fix
+
+# Format code
+bun run format
 ```
 
 ## Workspace Layout

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "root": false,
+  "extends": [
+    "./base.jsonc"
+  ],
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "react": "recommended"
+    },
+    "rules": {
+      "style": {
+        // For React Fast Refresh to work
+        "useComponentExportOnlyModules": "warn",
+        "useReactFunctionComponents": "error"
+      }
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true
+    },
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true
+    },
+    "experimentalFullSupportEnabled": true
+  }
+}

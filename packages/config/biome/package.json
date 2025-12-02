@@ -1,0 +1,36 @@
+{
+  "name": "@pelatform/biome-config",
+  "version": "0.0.1",
+  "description": "Opinionated Biome configuration for modern TypeScript projects.",
+  "author": "Pelatform",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./base": "./base.jsonc",
+    "./react": "./react.jsonc"
+  },
+  "repository": "github:devpelatform/toolkits",
+  "homepage": "https://github.com/devpelatform/toolkits",
+  "bugs": {
+    "url": "https://github.com/devpelatform/toolkits/issues"
+  },
+  "keywords": [
+    "pelatform",
+    "biome",
+    "configuration",
+    "config"
+  ],
+  "peerDependencies": {
+    "@biomejs/biome": ">=2.3.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts}": "biome check --write --no-errors-on-unmatched",
+    "*.{md,yml,yaml}": "prettier --write",
+    "*.{json,jsonc,html}": "biome format --write --no-errors-on-unmatched"
+  }
+}
