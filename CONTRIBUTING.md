@@ -19,7 +19,7 @@ This template is community-driven. Your contributions help:
 ### Prerequisites
 
 - [Bun](https://bun.sh) 1.3.3 or higher
-- Node.js 20 or higher
+- Node.js 22 or higher
 - Git
 
 ### Setup
@@ -53,8 +53,14 @@ bun run build
 # Type-check all workspaces
 bun run types:check
 
-# Lint and format code
-bun run lint:format
+# Lint (check)
+bun run lint
+
+# Lint (auto-fix)
+bun run lint:fix
+
+# Format code
+bun run format
 ```
 
 ### Working on a Specific Package
@@ -82,17 +88,19 @@ This project uses [Biome](https://biomejs.dev/) for linting and formatting to en
 - **Trailing Commas**: All
 - **Arrow Parentheses**: Always
 
-### Format and Lint
+### Lint dan Format
 
 Before committing, always run:
 
 ```bash
-# Format and lint in one command
-bun run lint:format
+# Lint (check)
+bun run lint
 
-# Or run separately
-bun run format    # Format only
-bun run lint      # Lint only
+# Lint (auto-fix)
+bun run lint:fix
+
+# Format only
+bun run format
 ```
 
 ## Making Changes
@@ -150,8 +158,11 @@ bun run types:check
 # Build to ensure no build errors
 bun run build
 
-# Lint and format
-bun run lint:format
+# Lint (check)
+bun run lint
+
+# Format code
+bun run format
 ```
 
 Make sure:
@@ -181,7 +192,6 @@ Make sure:
 3. **Create a Pull Request** on GitHub targeting the `main` branch
 
 4. **Fill in the PR template** with:
-
    - **Clear title**: Use conventional commit format (e.g., "feat(animation): add text reveal component")
    - **Description**: Explain what changed and why
    - **Breaking changes**: Clearly document any breaking changes

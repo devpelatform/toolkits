@@ -23,6 +23,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Git User
+        run: |
+          git config --global user.email "lukmanaviccena@gmail.com"
+          git config --global user.name "Lukman Aviccena"
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -50,7 +55,7 @@ jobs:
       - name: Lint
         id: lint
         continue-on-error: false
-        run: bun run lint
+        run: bun run lint:fix && bun run lint
 
       - name: Create Release Pull Request or Publish to npm
         if: steps.build.outcome == 'success' && steps.lint.outcome == 'success'
