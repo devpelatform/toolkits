@@ -76,10 +76,10 @@
           "fix": "safe",
           "level": "info",
           "options": {}
-        },
+        }
         // For React Fast Refresh to work
-        "useComponentExportOnlyModules": "warn",
-        "useReactFunctionComponents": "error"
+        // "useComponentExportOnlyModules": "warn",
+        // "useReactFunctionComponents": "error"
       },
       "suspicious": {
         "noDuplicateProperties": "off",
@@ -119,11 +119,11 @@
               "react/**",
               "next",
               "next/**",
-              [":PACKAGE:", "!@pelatform/**", "!pelatformui", "!pelatformui/**", "!@repo/**"],
+              [":PACKAGE:", "!@pelatform/**", "!pelatform-ui", "!pelatform-ui/**", "!@repo/**"],
               ":BLANK_LINE:",
               "@pelatform/**",
-              "pelatformui",
-              "pelatformui/**",
+              "pelatform-ui",
+              "pelatform-ui/**",
               "@repo/**",
               ":ALIAS:",
               ":PATH:"
