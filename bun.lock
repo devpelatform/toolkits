@@ -30,7 +30,7 @@
     },
     "packages/config/tsconfig": {
       "name": "@pelatform/tsconfig",
-      "version": "0.1.2",
+      "version": "0.1.3",
     },
     "packages/email": {
       "name": "@pelatform/email",

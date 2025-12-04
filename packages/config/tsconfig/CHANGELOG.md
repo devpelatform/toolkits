@@ -1,5 +1,11 @@
 # @pelatform/tsconfig
 
+## 0.1.3
+
+### Patch Changes
+
+- [`4219ff7`](https://github.com/devpelatform/toolkits/commit/4219ff71d7e77aa9675554be86d499e347755170) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Disable unused tsconfig options
+
 ## 0.1.2
 
 ### Patch Changes
