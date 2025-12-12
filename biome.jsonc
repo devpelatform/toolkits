@@ -1,4 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
-  "extends": ["@pelatform/biome-config/base"]
+  "extends": ["@pelatform/biome-config/base"],
+  "files": {
+    "includes": ["!!**/test"]
+  }
 }
