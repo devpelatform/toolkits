@@ -1,5 +1,11 @@
 # @pelatform/utils
 
+## 1.0.6
+
+### Patch Changes
+
+- [`1b4a0e7`](https://github.com/devpelatform/toolkits/commit/1b4a0e73fa0f9b41fe8507e57e4c17ba43238d84) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Add auth utility functions and improve locale mapping
+
 ## 1.0.5
 
 ### Patch Changes
