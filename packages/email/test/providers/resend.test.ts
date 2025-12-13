@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { createResend } from "@pelatform/email";
+import { createResend } from "../../src/index";
 
 describe("Resend Provider", () => {
   beforeEach(() => {

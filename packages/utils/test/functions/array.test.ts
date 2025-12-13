@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { chunk, randomValue, stableSort } from "@pelatform/utils";
+import { chunk, randomValue, stableSort } from "../../src/index";
 
 describe("Array", () => {
   it("chunk should split arrays by size", () => {

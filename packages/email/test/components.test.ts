@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 // Test that components export properly
 describe("Email Components", () => {
   it("should re-export React Email components", async () => {
-    const componentsModule = await import("@pelatform/email/components");
+    const componentsModule = await import("../src/components");
 
     // Check that the module exports expected items
     expect(componentsModule).toBeDefined();
@@ -17,7 +17,7 @@ describe("Email Components", () => {
   });
 
   it("should export the ReactEmailComponents namespace", async () => {
-    const { ReactEmailComponents } = await import("@pelatform/email/components");
+    const { ReactEmailComponents } = await import("../src/components");
 
     expect(ReactEmailComponents).toBeDefined();
     expect(typeof ReactEmailComponents).toBe("object");

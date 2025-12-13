@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { S3Provider } from "@/providers/s3";
-import type { S3Config } from "@/types";
+import { S3Provider } from "../src/providers/s3";
+import type { S3Config } from "../src/types";
 
 describe("S3Provider basic", () => {
   const config: S3Config = {

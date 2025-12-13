@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { S3Service } from "@/services/s3";
-import type { S3Config } from "@/types";
+import { S3Service } from "../src/services/s3";
+import type { S3Config } from "../src/types";
 
 function makeWebReader(chunks: Uint8Array[]) {
   let i = 0;

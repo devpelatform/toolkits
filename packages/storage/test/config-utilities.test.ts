@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { ENV_VARS, getStorageEnvVars, getStorageProvider } from "@/config";
+import { ENV_VARS, getStorageEnvVars, getStorageProvider } from "../src/config";
 
 describe("Storage Config Utilities", () => {
   beforeEach(() => {

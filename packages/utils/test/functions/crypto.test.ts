@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cuid, customeId, nanoid, uid } from "@pelatform/utils";
+import { cuid, customeId, nanoid, uid } from "../../src/index";
 
 describe("Crypto", () => {
   it("cuid should generate unique id", () => {

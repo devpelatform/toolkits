@@ -7,7 +7,7 @@ import {
   constructURLFromUTMParams,
   getUrlWithoutUTMParams,
   createHref,
-} from "@pelatform/utils";
+} from "../../src/index";
 
 describe("URL", () => {
   it("isValidUrl should validate", () => {

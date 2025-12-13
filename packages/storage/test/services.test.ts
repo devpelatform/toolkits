@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { S3Service, createS3 } from "@/s3";
-import { CloudinaryService, createCloudinary } from "@/cloudinary";
+import { S3Service, createS3 } from "../src/s3";
+import { CloudinaryService, createCloudinary } from "../src/cloudinary";
 
 describe("Storage Services", () => {
   it("S3Service builds public URL using publicUrl", () => {

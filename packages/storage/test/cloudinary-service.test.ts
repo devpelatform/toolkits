@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { CloudinaryService } from "@/services/cloudinary";
-import type { CloudinaryConfig } from "@/types";
+import { CloudinaryService } from "../src/services/cloudinary";
+import type { CloudinaryConfig } from "../src/types";
 
 describe("CloudinaryService", () => {
   const config: CloudinaryConfig = {

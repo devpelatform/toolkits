@@ -1,8 +1,8 @@
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { EmailConfig } from "@pelatform/email";
-import { EmailService } from "@pelatform/email";
+import type { EmailConfig } from "../src/index";
+import { EmailService } from "../src/index";
 
 describe("EmailService", () => {
   beforeEach(() => {

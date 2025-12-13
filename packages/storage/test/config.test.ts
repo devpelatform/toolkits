@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { hasStorageConfig, isStorageConfigured, loadCloudinaryConfig, loadS3Config, loadStorageConfig } from "@/config";
+import { hasStorageConfig, isStorageConfigured, loadCloudinaryConfig, loadS3Config, loadStorageConfig } from "../src/config";
 
 describe("Storage Configuration", () => {
   beforeEach(() => {

@@ -11,7 +11,7 @@ import {
   getClientIPFromHeaders,
   getUserAgentFromHeaders,
   parse,
-} from "@pelatform/utils";
+} from "../../src/index";
 
 describe("HTTP", () => {
   it("request should perform GET", async () => {
@@ -124,9 +124,9 @@ describe("HTTP", () => {
     expect(p.searchParamsObj).toEqual({ page: "1", limit: "10" });
   });
 
-  it("normalizePath should handle edge cases", () => {
+  it("normalizePath should handle edge cases", async () => {
     // import inline to avoid circular
-    const mod = require("@pelatform/utils");
+    const mod = await import("../../src/index");
     expect(mod.normalizePath("dashboard")).toBe("/dashboard");
     expect(mod.normalizePath("//a///b")).toBe("/a/b");
     expect(mod.normalizePath("/login/")).toBe("/login");

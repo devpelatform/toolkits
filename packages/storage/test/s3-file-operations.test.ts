@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { FileOperations } from "@/operations/file-operations";
-import type { S3Config } from "@/types";
+import { FileOperations } from "../src/operations/file-operations";
+import type { S3Config } from "../src/types";
 
 function makeWebReader(chunks: Uint8Array[]) {
   let i = 0;

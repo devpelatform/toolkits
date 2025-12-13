@@ -1,5 +1,3 @@
-import { resolve } from "node:path";
-
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
@@ -33,15 +31,6 @@ export default defineConfig({
         lines: 90,
         branches: 85,
       },
-    },
-  },
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src"),
-      "@pelatform/storage": resolve(__dirname, "./src/index.ts"),
-      "@pelatform/storage/s3": resolve(__dirname, "./src/s3.ts"),
-      "@pelatform/storage/cloudinary": resolve(__dirname, "./src/cloudinary.ts"),
-      "@pelatform/storage/helpers": resolve(__dirname, "./src/helpers.ts"),
     },
   },
 });

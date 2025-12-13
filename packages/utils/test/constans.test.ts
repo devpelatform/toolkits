@@ -24,7 +24,7 @@ import {
   CONTINENT_CODES,
   ccTLDs,
   SPECIAL_APEX_DOMAINS,
-} from "@pelatform/utils";
+} from "../src/index";
 
 describe("Constants", () => {
   describe("Colors", () => {

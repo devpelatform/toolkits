@@ -1,5 +1,3 @@
-import { resolve } from "node:path";
-
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
@@ -54,12 +52,6 @@ export default defineConfig({
         lines: 90,
         branches: 85,
       },
-    },
-  },
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src"),
-      "@pelatform/utils": resolve(__dirname, "./src"),
     },
   },
 });

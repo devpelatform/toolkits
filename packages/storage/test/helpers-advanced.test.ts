@@ -30,7 +30,7 @@ import {
   validateFileType,
   validateS3Config,
   validateS3Key,
-} from "@/helpers";
+} from "../src/helpers";
 
 describe("Storage Helpers - Advanced", () => {
   it("generateFileKey creates predictable format with prefix", () => {

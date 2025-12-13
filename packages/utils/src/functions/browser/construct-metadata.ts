@@ -49,14 +49,56 @@ export type metadataProps = {
  * @param locale - Short locale code (e.g., 'en', 'id', 'ar', 'zh')
  * @returns Open Graph locale string (e.g., 'en_US', 'id_ID', 'ar_AR', 'zh_CN')
  */
-function mapLocale(locale?: string): string | undefined {
-  if (!locale) return undefined;
+export function mapLocale(locale?: string): string | undefined {
+  if (!locale) return "en_US";
 
   const mapping: Record<string, string> = {
-    en: "en_US",
-    id: "id_ID",
-    ar: "ar_AR",
-    zh: "zh_CN",
+    af: "af_ZA", // Afrikaans - South Africa
+    am: "am_ET", // Amharic - Ethiopia
+    ar: "ar_AR", // Arabic - Saudi Arabia
+    bn: "bn_BD", // Bengali - Bangladesh
+    bg: "bg_BG", // Bulgarian - Bulgaria
+    cs: "cs_CZ", // Czech - Czech Republic
+    da: "da_DK", // Danish - Denmark
+    de: "de_DE", // German - Germany
+    el: "el_GR", // Greek - Greece
+    en: "en_US", // English - United States
+    en_uk: "en_GB", // English - United Kingdom
+    es: "es_ES", // Spanish - Spain
+    es_mx: "es_MX", // Spanish - Mexico
+    fa: "fa_IR", // Persian/Farsi - Iran
+    fi: "fi_FI", // Finnish - Finland
+    fr: "fr_FR", // French - France
+    fr_ca: "fr_CA", // French - Canada
+    he: "he_IL", // Hebrew - Israel
+    hi: "hi_IN", // Hindi - India
+    hr: "hr_HR", // Croatian - Croatia
+    hu: "hu_HU", // Hungarian - Hungary
+    id: "id_ID", // Indonesian - Indonesia
+    it: "it_IT", // Italian - Italy
+    ja: "ja_JP", // Japanese - Japan
+    ko: "ko_KR", // Korean - South Korea
+    ms: "ms_MY", // Malay - Malaysia
+    nl: "nl_NL", // Dutch - Netherlands
+    no: "nb_NO", // Norwegian Bokmål - Norway
+    pl: "pl_PL", // Polish - Poland
+    pt: "pt_PT", // Portuguese - Portugal
+    pt_br: "pt_BR", // Portuguese - Brazil
+    ro: "ro_RO", // Romanian - Romania
+    ru: "ru_RU", // Russian - Russia
+    sk: "sk_SK", // Slovak - Slovakia
+    sr: "sr_RS", // Serbian - Serbia
+    sv: "sv_SE", // Swedish - Sweden
+    sw: "sw_KE", // Swahili - Kenya
+    th: "th_TH", // Thai - Thailand
+    tl: "tl_PH", // Filipino/Tagalog - Philippines
+    tr: "tr_TR", // Turkish - Türkiye
+    uk: "uk_UA", // Ukrainian - Ukraine
+    ur: "ur_PK", // Urdu - Pakistan
+    vi: "vi_VN", // Vietnamese - Vietnam
+    zh: "zh_CN", // Chinese (Simplified) - China
+    zh_hk: "zh_HK", // Chinese (Traditional) - Hong Kong
+    zh_tw: "zh_TW", // Chinese (Traditional) - Taiwan
   };
 
   return mapping[locale] || locale;

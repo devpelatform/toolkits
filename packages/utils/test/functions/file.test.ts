@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatFileSize } from "@pelatform/utils";
+import { formatFileSize } from "../../src/index";
 
 describe("File", () => {
   it("formatFileSize should format sizes", () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { logger, SlackLog } from "@pelatform/utils";
+import { logger, SlackLog } from "../../src/index";
 
 describe("Logging", () => {
   it("logger should expose methods", () => {
@@ -16,7 +16,7 @@ describe("Logging", () => {
   it("SlackLog should post when webhook is set", async () => {
     vi.resetModules();
     process.env.SLACK_WEBHOOKS_HOOK_ALERTS = "https://example.com/webhook";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     const spy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ ok: true } as any);
     await mod.SlackLog({ message: "ping", type: "alerts" });
     expect(spy).toHaveBeenCalled();
@@ -27,7 +27,7 @@ describe("Logging", () => {
   it("SlackLog should handle fetch errors gracefully", async () => {
     vi.resetModules();
     process.env.SLACK_WEBHOOKS_HOOK_ALERTS = "https://example.com/webhook";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     const fetchSpy = vi.spyOn(globalThis, "fetch").mockRejectedValue(new Error("network"));
     const logSpy = vi.spyOn(mod.logger, "log").mockImplementation(() => { });
     await mod.SlackLog({ message: "error-case", type: "alerts" });
@@ -42,7 +42,7 @@ describe("Logging", () => {
     const prev = process.env.NODE_ENV;
     vi.resetModules();
     process.env.NODE_ENV = "development";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     expect(typeof mod.logger.info).toBe("function");
     process.env.NODE_ENV = prev;
   });
@@ -51,7 +51,7 @@ describe("Logging", () => {
     const prevEnv = process.env.NODE_ENV;
     vi.resetModules();
     process.env.NODE_ENV = "development";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     const fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ ok: true } as any);
     const logSpy = vi.spyOn(mod.logger, "log").mockImplementation(() => { });
     await mod.SlackLog({ message: "dev", type: "alerts" });
@@ -66,7 +66,7 @@ describe("Logging", () => {
     vi.resetModules();
     process.env.NODE_ENV = "production";
     process.env.SLACK_WEBHOOKS_HOOK_ERRORS = "https://example.com/webhook";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     const fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ ok: true } as any);
     await mod.SlackLog({ message: "critical", type: "errors", mention: true });
     const [, options] = fetchSpy.mock.calls[0];
@@ -80,7 +80,7 @@ describe("Logging", () => {
     vi.resetModules();
     process.env.NODE_ENV = "production";
     process.env.SLACK_WEBHOOKS_HOOK_LINKS = "https://example.com/webhook";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     const fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ ok: true } as any);
     await mod.SlackLog({ message: "links-msg", type: "links" });
     const [, options] = fetchSpy.mock.calls[0];
@@ -94,7 +94,7 @@ describe("Logging", () => {
     vi.resetModules();
     process.env.NODE_ENV = "production";
     delete process.env.SLACK_WEBHOOKS_HOOK_SUBSCRIBERS;
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     const fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ ok: true } as any);
     await mod.SlackLog({ message: "no-hook", type: "subscribers" });
     expect(fetchSpy).not.toHaveBeenCalled();
@@ -109,7 +109,7 @@ describe("Logging", () => {
     process.env.SLACK_WEBHOOKS_HOOK_LINKS = "https://example.com/l";
     process.env.SLACK_WEBHOOKS_HOOK_SUBSCRIBERS = "https://example.com/s";
     process.env.SLACK_WEBHOOKS_HOOK_ERRORS = "https://example.com/e";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     const logSpy = vi.spyOn(mod.logger, "log").mockImplementation(() => { });
     const fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ ok: true } as any);
     await mod.SlackLog({ message: "all-set", type: "alerts" });
@@ -125,7 +125,7 @@ describe("Logging", () => {
     vi.resetModules();
     process.env.NODE_ENV = "production";
     process.env.LOG_LEVEL = "4";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     // Exercise the logger to ensure instance created on LOG_LEVEL branch
     mod.logger.info("level4");
     process.env.NODE_ENV = prevEnv;

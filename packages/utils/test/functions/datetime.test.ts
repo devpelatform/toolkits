@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getDaysDifference, getCurrentYear, formatDate } from "@pelatform/utils";
+import { getDaysDifference, getCurrentYear, formatDate } from "../../src/index";
 
 describe("Datetime", () => {
   it("getDaysDifference should compute differences", () => {

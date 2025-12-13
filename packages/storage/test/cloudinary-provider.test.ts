@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { CloudinaryProvider } from "@/providers/cloudinary";
-import type { CloudinaryConfig } from "@/types";
+import { CloudinaryProvider } from "../src/providers/cloudinary";
+import type { CloudinaryConfig } from "../src/types";
 
 describe("CloudinaryProvider", () => {
   const config: CloudinaryConfig = {

@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { createS3 } from "@/s3";
-import { createCloudinary } from "@/cloudinary";
-import { ENV_VARS } from "@/config";
+import { createS3 } from "../src/s3";
+import { createCloudinary } from "../src/cloudinary";
+import { ENV_VARS } from "../src/config";
 
 describe("Factories via env", () => {
   beforeEach(() => {

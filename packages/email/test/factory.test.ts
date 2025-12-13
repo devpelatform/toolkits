@@ -1,13 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { EmailConfig, NodemailerConfig, ResendConfig } from "@pelatform/email";
+import type { EmailConfig, NodemailerConfig, ResendConfig } from "../src/index";
 import {
   createEmail,
   createNodemailer,
   createResend,
   getConfiguredProvider,
   isEmailConfigured,
-} from "@pelatform/email";
+} from "../src/index";
 
 describe("Email Factory", () => {
   beforeEach(() => {
@@ -161,7 +161,7 @@ describe("Email Factory", () => {
     it("should handle empty config object", async () => {
       vi.unmock("../src/providers/resend");
       vi.resetModules();
-      const { createResend } = await import("@pelatform/email");
+      const { createResend } = await import("../src/index");
       const config = {} as any;
       expect(() => createResend(config)).toThrow();
     });
@@ -214,7 +214,7 @@ describe("Email Factory", () => {
     it("should handle empty config object", async () => {
       vi.unmock("../src/providers/nodemailer");
       vi.resetModules();
-      const { createNodemailer } = await import("@pelatform/email");
+      const { createNodemailer } = await import("../src/index");
       const config = {} as any;
       expect(() => createNodemailer(config)).toThrow();
     });

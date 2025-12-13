@@ -84,3 +84,9 @@ export const INFINITY_NUMBER = 1000000000;
  * const url = `/login?${REDIRECTION_QUERY_PARAM}=/dashboard`;
  */
 export const REDIRECT_QUERY_PARAM = "redirectTo";
+
+/**
+ * LocalStorage key for storing the last visited workspace.
+ * Used to persist user's last active workspace between sessions.
+ */
+export const LAST_VISITED_WORKSPACE = "last-visited-workspace";

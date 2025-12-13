@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { createNodemailer } from "@pelatform/email";
+import { createNodemailer } from "../../src/index";
 
 describe("Nodemailer Provider", () => {
   beforeEach(() => {

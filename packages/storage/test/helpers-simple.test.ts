@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { formatFileSize, getMimeType } from "@/helpers";
+import { formatFileSize, getMimeType } from "../src/helpers";
 
 describe("Storage Helpers - Simple Tests", () => {
   describe("getMimeType", () => {

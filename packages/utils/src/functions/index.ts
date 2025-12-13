@@ -80,6 +80,7 @@ export * from "./performance/throttle";
  **** STRING - String utilities
  *************************************/
 export * from "./string/assets";
+export * from "./string/auth";
 export * from "./string/camel-case";
 export * from "./string/capitalize";
 export * from "./string/cn";
@@ -92,7 +93,7 @@ export * from "./string/pluralize";
 // export * from './string/punycode';
 export * from "./string/regex-escape";
 export * from "./string/smart-truncate";
-export * from "./string/translations";
+// export * from "./string/translations";
 export * from "./string/trim";
 export * from "./string/truncate";
 

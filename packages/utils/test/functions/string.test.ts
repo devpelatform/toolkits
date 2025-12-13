@@ -15,7 +15,7 @@ import {
   trim,
   assetsUrl,
   getFlagUrl,
-} from "@pelatform/utils";
+} from "../../src/index";
 
 describe("String", () => {
   it("capitalize should format words", () => {
@@ -84,7 +84,7 @@ describe("String", () => {
     const prev = process.env.NODE_ENV;
     vi.resetModules();
     process.env.NODE_ENV = "development";
-    const mod = await import("@pelatform/utils");
+    const mod = await import("../../src/index");
     expect(mod.normalizeString("\uFEFFDev   Mode")).toBe("dev mode");
     process.env.NODE_ENV = prev;
   });

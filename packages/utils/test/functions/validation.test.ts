@@ -7,7 +7,7 @@ import {
   getEmailDomain,
   deepEqual,
   isIframeable,
-} from "@pelatform/utils";
+} from "../../src/index";
 
 describe("Validation", () => {
   it("validateEmail should validate formats", () => {

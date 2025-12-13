@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { debounce, throttle } from "@pelatform/utils";
+import { debounce, throttle } from "../../src/index";
 
 describe("Performance", () => {
   it("debounce should delay execution", () => {

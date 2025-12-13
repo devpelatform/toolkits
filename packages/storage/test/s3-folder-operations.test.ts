@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { FolderOperations } from "@/operations/folder-operations";
-import type { S3Config } from "@/types";
+import { FolderOperations } from "../src/operations/folder-operations";
+import type { S3Config } from "../src/types";
 
 describe("S3 FolderOperations", () => {
   const config: S3Config = {

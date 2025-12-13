@@ -8,7 +8,7 @@ import {
   loadResendConfig,
   validateEmailEnvVars,
   validateNodemailerEnvVars,
-} from "@pelatform/email";
+} from "../src/index";
 
 describe("Email Configuration", () => {
   beforeEach(() => {
