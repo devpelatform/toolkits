@@ -1,5 +1,11 @@
 # @pelatform/biome-config
 
+## 0.1.4
+
+### Patch Changes
+
+- [`548b9f4`](https://github.com/devpelatform/toolkits/commit/548b9f42fd57b8a8089b3dac8fb455c8eca76c5e) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Add clsx, cva, tw, and tw.\* to the list of recognized classname utility functions to ensure proper linting coverage
+
 ## 0.1.3
 
 ### Patch Changes
