@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "clean": "turbo run clean",
-    "clean:all": "turbo run clean:all && rm -rf .husky .turbo bun.lock node_modules",
+    "clean:all": "turbo run clean:all && rm -rf .husky .turbo bun.lock coverage node_modules",
     "prepare": "husky",
     "dev": "turbo run dev",
     "build": "turbo run build",
@@ -31,7 +31,7 @@
     "@pelatform/biome-config": "workspace:*",
     "@types/bun": "^1.3.4",
     "@types/node": "^25.0.2",
-    "@vitest/coverage-v8": "^4.0.15",
+    "@vitest/coverage-v8": "^4.0.16",
     "commitlint-plugin-function-rules": "^4.2.0",
     "husky": "^9.1.7",
     "jsdom": "^27.3.0",
@@ -40,7 +40,7 @@
     "rimraf": "^6.1.2",
     "turbo": "2.6.3",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.15"
+    "vitest": "^4.0.16"
   },
   "workspaces": [
     "packages/**",
