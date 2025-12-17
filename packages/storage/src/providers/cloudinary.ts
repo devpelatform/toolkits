@@ -82,12 +82,15 @@ export class CloudinaryProvider implements StorageInterface {
       // Extract folder and filename from key for Cloudinary folder support
       const keyParts = options.key.split("/");
       let folder = "";
-      let publicId = options.key;
+      let publicId = keyParts[keyParts.length - 1];
 
       if (keyParts.length > 1) {
-        // If key contains folders (e.g., "user/profile.jpg")
-        folder = keyParts.slice(0, -1).join("/"); // "user"
-        publicId = keyParts[keyParts.length - 1]; // "profile.jpg"
+        folder = keyParts.slice(0, -1).join("/");
+      }
+
+      const dotIndex = publicId.lastIndexOf(".");
+      if (dotIndex > 0) {
+        publicId = publicId.slice(0, dotIndex);
       }
 
       const uploadOptions: Record<string, unknown> = {
@@ -103,9 +106,39 @@ export class CloudinaryProvider implements StorageInterface {
         uploadOptions.folder = folder;
       }
 
+      // Add folder if enabled in config
+      if (this.config.folder) {
+        uploadOptions.folder = `${this.config.folder}/${folder}`;
+      }
+
       const result = await cloudinary.uploader.upload(fileData, uploadOptions);
 
-      const publicUrl = this.getPublicUrl(result.public_id);
+      // Sample result structure
+      // {
+      //   asset_id: 'b4033628c0897843e61e362167f338d6',
+      //   public_id: 'starter/workspaces/logo/ws_1KBQ2V0VRKK5EN936G8S2XZ30',
+      //   version: 1765965394,
+      //   version_id: 'abd49804c49061cef406f8d703466849',
+      //   signature: 'ff52169a483bada7ca4943ce322132137bec4d2f',
+      //   width: 256,
+      //   height: 256,
+      //   format: 'png',
+      //   resource_type: 'image',
+      //   created_at: '2025-12-17T09:52:12Z',
+      //   tags: [],
+      //   bytes: 76429,
+      //   type: 'upload',
+      //   etag: '85e34db0ea9ce8e771e25bd8eb33ba56',
+      //   placeholder: false,
+      //   url: 'http://res.cloudinary.com/droen5ejq/image/upload/v1765965394/starter/workspaces/logo/ws_1KBQ2V0VRKK5EN936G8S2XZ30.png',
+      //   secure_url: 'https://res.cloudinary.com/droen5ejq/image/upload/v1765965394/starter/workspaces/logo/ws_1KBQ2V0VRKK5EN936G8S2XZ30.png',
+      //   asset_folder: 'starter/workspaces/logo',
+      //   display_name: 'ws_1KBQ2V0VRKK5EN936G8S2XZ30',
+      //   overwritten: true,
+      //   api_key: '255239588173378'
+      // }
+
+      const publicUrl = this.getPublicUrl(result.public_id, result.format);
 
       return {
         success: true,
@@ -168,6 +201,16 @@ export class CloudinaryProvider implements StorageInterface {
         const folder = keyParts.slice(0, -1).join("/");
         const filename = keyParts[keyParts.length - 1];
         publicId = `${folder}/${filename}`;
+      }
+
+      const dotIndex = publicId.lastIndexOf(".");
+      if (dotIndex > 0) {
+        publicId = publicId.slice(0, dotIndex);
+      }
+
+      // Add folder if enabled in config
+      if (this.config.folder) {
+        publicId = `${this.config.folder}/${publicId}`;
       }
 
       // Determine resource type from key/path
@@ -356,7 +399,7 @@ export class CloudinaryProvider implements StorageInterface {
     }
   }
 
-  getPublicUrl(key: string): string {
+  getPublicUrl(key: string, extension?: string): string {
     // Generate Cloudinary URL
     const protocol = this.config.secure !== false ? "https" : "http";
     const baseUrl = `${protocol}://res.cloudinary.com/${this.config.cloudName}`;
@@ -369,7 +412,7 @@ export class CloudinaryProvider implements StorageInterface {
     // For raw files: /raw/upload/v1234567890/sample.pdf
 
     // Default to image for now, in real implementation you'd detect file type
-    return `${baseUrl}/image/upload/${publicId}`;
+    return `${baseUrl}/image/upload/${publicId}${extension ? `.${extension}` : ""}`;
   }
 
   // Folder operations

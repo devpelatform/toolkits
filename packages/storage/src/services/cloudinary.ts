@@ -157,6 +157,10 @@ export class CloudinaryService implements StorageInterface {
     return this.batchDelete({ keys });
   }
 
+  async listFiles(prefix?: string, maxKeys?: number): Promise<ListResult> {
+    return this.list({ prefix, maxKeys });
+  }
+
   async fileExists(key: string): Promise<boolean> {
     const result = await this.exists(key);
     return result.exists;
@@ -192,10 +196,6 @@ export class CloudinaryService implements StorageInterface {
     metadata?: Record<string, string>,
   ): Promise<MoveResult> {
     return this.moveFile(sourceKey, destinationKey, metadata);
-  }
-
-  async listFiles(prefix?: string, maxKeys?: number): Promise<ListResult> {
-    return this.list({ prefix, maxKeys });
   }
 
   async getDownloadUrl(key: string, expiresIn?: number): Promise<PresignedUrlResult> {

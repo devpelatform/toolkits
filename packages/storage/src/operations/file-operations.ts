@@ -364,12 +364,20 @@ export class FileOperations {
   }
 
   getPublicUrl(key: string): string {
+    const isCloudflare = this.config.provider === "cloudflare-r2";
+    const isSupabase = this.config.provider === "supabase";
+
     if (this.config.publicUrl) {
-      return buildPublicUrl(this.config.publicUrl, this.config.bucket, key);
+      return buildPublicUrl(
+        this.config.publicUrl,
+        isCloudflare ? "" : this.config.bucket,
+        key,
+        isSupabase,
+      );
     }
 
     if (this.config.endpoint) {
-      return buildPublicUrl(this.config.endpoint, this.config.bucket, key);
+      return buildPublicUrl(this.config.endpoint, this.config.bucket, key, isSupabase);
     }
 
     // Default AWS S3 URL format

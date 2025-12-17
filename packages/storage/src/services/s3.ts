@@ -182,6 +182,10 @@ export class S3Service implements StorageInterface {
     return this.batchDelete({ keys });
   }
 
+  async listFiles(prefix?: string, maxKeys?: number): Promise<ListResult> {
+    return this.list({ prefix, maxKeys });
+  }
+
   async fileExists(key: string): Promise<boolean> {
     const result = await this.exists(key);
     return result.exists;
