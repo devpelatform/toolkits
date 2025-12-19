@@ -9,9 +9,9 @@ This is a Bun-based monorepo for Pelatform Toolkits, containing utility packages
 ## Tech Stack
 
 - **Package Manager**: Bun (v1.3.3+)
-- **Monorepo Tool**: Turborepo (v2.6.1)
+- **Monorepo Tool**: Turborepo (v2.6.3)
 - **Build Tool**: tsup (for package bundling)
-- **Linting/Formatting**: Biome (v2.3.7)
+- **Linting/Formatting**: Biome (v2.3.10)
 - **Language**: TypeScript 5.9.3
 - **Node Version**: >=22
 
@@ -65,6 +65,7 @@ cd packages/email && bun run types:check  # Type-check specific package
 │   ├── email/          # Email (Resend, Nodemailer)
 │   ├── storage/        # Storage (S3, Cloudinary, R2, MinIO, etc.)
 │   ├── utils/          # Common utilities
+│   ├── mcp/           # MCP server for documentation
 │   └── config/
 │       ├── biome/      # Biome configuration
 │       └── tsconfig/   # TypeScript configuration
@@ -94,6 +95,12 @@ cd packages/email && bun run types:check  # Type-check specific package
 - **Categories**: string, url, datetime, crypto, validation, browser, array, analytics
 - **Exports**: Main exports, `/server` (for server-only utilities)
 - **Key Features**: JWT handling, password hashing, slugification, URL utilities, date parsing/formatting
+
+### @pelatform/mcp.toolkits
+
+- **Purpose**: MCP server for documentation and code assistance
+- **Private Package**: Not published to npm
+- **Used for**: Internal documentation lookup and code helper functions
 
 ### @pelatform/biome-config
 
