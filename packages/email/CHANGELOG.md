@@ -1,5 +1,11 @@
 # @pelatform/email
 
+## 1.0.7
+
+### Patch Changes
+
+- [`0775563`](https://github.com/pelatformlabs/toolkits/commit/0775563b721259d767f6dab2d8c3dad42d6e491a) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Update @react-email/components to 1.0.2
+
 ## 1.0.6
 
 ### Patch Changes
