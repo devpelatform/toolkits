@@ -29,7 +29,7 @@ Pelatform Toolkits is a community-driven collection of packages that standardize
 1. Fork the repository on GitHub
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/devpelatform/toolkits.git
+   git clone https://github.com/pelatformlabs/toolkits.git
    cd toolkits
    ```
 3. Install dependencies:
@@ -278,9 +278,9 @@ If you discover a security vulnerability within Pelatform Toolkits, please send 
 If you have questions or need help:
 
 - Check the [documentation](./README.md) and package READMEs
-- Search [existing issues](https://github.com/devpelatform/toolkits/issues) and [discussions](https://github.com/devpelatform/toolkits/discussions)
-- Open a new [discussion](https://github.com/devpelatform/toolkits/discussions) for questions
-- Open an [issue](https://github.com/devpelatform/toolkits/issues) for bug reports
+- Search [existing issues](https://github.com/pelatformlabs/toolkits/issues) and [discussions](https://github.com/pelatformlabs/toolkits/discussions)
+- Open a new [discussion](https://github.com/pelatformlabs/toolkits/discussions) for questions
+- Open an [issue](https://github.com/pelatformlabs/toolkits/issues) for bug reports
 
 ## License
 

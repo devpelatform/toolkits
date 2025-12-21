@@ -28,10 +28,10 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },
-  "repository": "github:devpelatform/toolkits",
-  "homepage": "https://github.com/devpelatform/toolkits",
+  "repository": "github:pelatformlabs/toolkits",
+  "homepage": "https://github.com/pelatformlabs/toolkits",
   "bugs": {
-    "url": "https://github.com/devpelatform/toolkits/issues"
+    "url": "https://github.com/pelatformlabs/toolkits/issues"
   },
   "files": [
     "dist"

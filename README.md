@@ -34,7 +34,7 @@ A collection of ready-to-use packages for modern application development. This m
 
 ```bash
 # Clone repository
-git clone https://github.com/devpelatform/toolkits.git
+git clone https://github.com/pelatformlabs/toolkits.git
 cd toolkits
 
 # Install dependencies (Bun)
@@ -91,7 +91,7 @@ We welcome contributions! This project is community-driven and your help makes i
 
 - Read the [Contributing Guide](./CONTRIBUTING.md) for development setup and guidelines
 - Check the [Code of Conduct](./CODE_OF_CONDUCT.md)
-- Browse [open issues](https://github.com/devpelatform/dev/issues) or start a [discussion](https://github.com/devpelatform/dev/discussions)
+- Browse [open issues](https://github.com/pelatformlabs/toolkits/issues) or start a [discussion](https://github.com/pelatformlabs/toolkits/discussions)
 
 ## Security
 
