@@ -1,5 +1,11 @@
 # @pelatform/email
 
+## 1.0.9
+
+### Patch Changes
+
+- [`58a924c`](https://github.com/pelatformlabs/toolkits/commit/58a924c671a14759995bf11e8c8f436280aea9c0) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Update dependencies to latest versions
+
 ## 1.0.8
 
 ### Patch Changes
